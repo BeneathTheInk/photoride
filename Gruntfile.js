@@ -76,6 +76,12 @@ module.exports = function(grunt) {
 				dest: "dist/photoride.min.js"
 			}
 		},
+		cssmin: {
+			dist: {
+				src: "dist/photoride.css",
+				dest: "dist/photoride.min.css"
+			}
+		},
 		watch: {
 			dev: {
 				files: [ "lib/*.{js,less}" ],
@@ -96,13 +102,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-wrap2000');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.registerTask('build-dev', [ 'browserify:dev', 'less:dev', 'wrap2000:dev' ]);
-	// grunt.registerTask('build-test', [ 'browserify:test', 'wrap2000:test' ]);
-	grunt.registerTask('build-dist', [ 'browserify:dist', 'less:dist', 'wrap2000:dist', 'uglify:dist' ]);
+	grunt.registerTask('build-dist', [ 'browserify:dist', 'less:dist', 'wrap2000:dist', 'uglify:dist', 'cssmin:dist' ]);
 
 	grunt.registerTask('dev', [ 'clean', 'build-dev' ]);
-	// grunt.registerTask('test', [ 'clean', 'precompile', 'build-test' ]);
 	grunt.registerTask('dist', [ 'clean', 'build-dist' ]);
 
 	grunt.registerTask('default', [ 'clean', 'build-dist', 'build-dev' ]);
