@@ -1,0 +1,66 @@
+@import "~lesshat/build/lesshat.less";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic);
+
+.photoride {
+	position: relative;
+	font-family: 'Source Sans Pro', sans-serif;
+	overflow: hidden;
+
+	* {
+		.box-sizing(border-box);
+	}
+
+	*:before, *:after {
+		.box-sizing(border-box);
+	}
+
+	.photoride-scroll {
+		position: absolute;
+		height: 100%;
+		top: 0;
+		.transition(left 250ms);
+	}
+
+	.photoride-image {
+		height: 100%;
+		position: relative;
+		float: left;
+		top: 0;
+		color: white;
+
+		.photoride-image-content {
+			overflow: scroll;
+			position: relative;
+			height: 100%;
+			padding: 30px;
+			z-index: 10;
+		}
+
+		.photoride-image-view {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 5;
+			.background-size(cover);
+		}
+
+		.photoride-image-title {
+			font-size: 36px;
+			font-weight: lighter;
+			position: relative;
+			border-bottom: 1px solid white;
+			padding-bottom: 10px;
+
+			&.photoride-image-title-empty {
+				border-bottom: none;
+			}
+		}
+
+		.photoride-image-caption {
+			position: relative;
+			padding-top: 30px;
+		}
+	}
+}
