@@ -1,0 +1,143 @@
+@import "~lesshat/build/lesshat.less";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic);
+
+.photoride {
+	position: relative;
+	font-family: 'Source Sans Pro', sans-serif;
+	overflow: hidden;
+	color: white;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-o-text-size-adjust: 100%;
+
+	* {
+		.box-sizing(border-box);
+	}
+
+	*:before, *:after {
+		.box-sizing(border-box);
+	}
+
+	.photoride-btn() {
+		display: block;
+		position: absolute;
+		width: 36px;
+		height: 36px;
+		background-repeat: no-repeat;
+		background-size: 80%;
+		z-index: 10;
+	}
+
+	.photoride-count {
+		position: absolute;
+		right: 8px;
+		top: 8px;
+		font-size: 14px;
+		padding: 3px 5px;
+		background-color: fade(black, 70%);
+		z-index: 10;
+		.border-radius(4px);
+		font-weight: 600;
+	}
+
+	.photoride-scroll {
+		position: absolute;
+		height: 100%;
+		top: 0;
+		z-index: 5;
+
+		&.photoride-scroll-transition {
+			.transition(left 250ms);
+		}
+
+		.photoride-image {
+			height: 100%;
+			position: relative;
+			float: left;
+			top: 0;
+
+			.photoride-image-content {
+				overflow: scroll;
+				position: relative;
+				height: 100%;
+				padding: 50px;
+				z-index: 10;
+			}
+
+			.photoride-image-view {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 5;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			.photoride-image-title {
+				font-size: 36px;
+				font-weight: lighter;
+				position: relative;
+				border-bottom: 1px solid white;
+				padding-bottom: 10px;
+
+				&.photoride-image-title-empty {
+					border-bottom: none;
+				}
+			}
+
+			.photoride-image-caption {
+				position: relative;
+
+				&.photoride-image-title-empty {
+					display: none;
+				}
+			}
+
+			.photoride-image-btn() {
+				left: 50%;
+				margin-left: -18px;
+				background-color: fade(black, 70%);
+				background-position: 3px 3px;
+				bottom: 9px;
+				.border-radius(18px);
+			}
+
+			.photoride-image-more {
+				.photoride-btn();
+				.photoride-image-btn();
+				background-image: url("./images/angle-up.png");
+			}
+
+			.photoride-image-top {
+				.photoride-btn();
+				.photoride-image-btn();
+				background-image: url("./images/angle-down.png");
+			}
+		}
+	}
+
+	.photoride-nav() {
+		top: 50%;
+		margin-top: -18px;
+		background-color: fade(black, 70%);
+		.border-radius(18px);
+	}
+
+	.photoride-next-btn {
+		.photoride-btn();
+		.photoride-nav();
+		right: 7px;
+		background-image: url("./images/angle-right.png");
+		background-position: 5px center;
+	}
+
+	.photoride-prev-btn {
+		.photoride-btn();
+		.photoride-nav();
+		left: 7px;
+		background-image: url("./images/angle-left.png");
+		background-position: 2px center;
+	}
+}

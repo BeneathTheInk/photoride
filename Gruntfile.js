@@ -1,4 +1,3 @@
-var LessNpmImport = require("less-plugin-npm-import");
 
 module.exports = function(grunt) {
 
@@ -7,14 +6,14 @@ module.exports = function(grunt) {
 		clean: [ "dist/" ],
 		browserify: {
 			dist: {
-				src: "photoride.js",
+				src: "lib/photoride.js",
 				dest: "dist/photoride.js",
 				options: {
 					browserifyOptions: { standalone: "Photoride" }
 				}
 			},
 			dev: {
-				src: "photoride.js",
+				src: "lib/photoride.js",
 				dest: "dist/photoride.dev.js",
 				options: {
 					browserifyOptions: { debug: true, standalone: "Photoride" }
@@ -30,14 +29,17 @@ module.exports = function(grunt) {
 		},
 		less: {
 			options: {
-				plugins: [ new LessNpmImport({ prefix: '~' }) ]
+				plugins: [
+					new (require("less-plugin-npm-import"))({ prefix: '~' }),
+					require("less-plugin-inline-urls")
+				]
 			},
 			dist: {
-				src: "photoride.less",
+				src: "lib/photoride.less",
 				dest: "dist/photoride.css"
 			},
 			dev: {
-				src: "photoride.less",
+				src: "lib/photoride.less",
 				dest: "dist/photoride.dev.css",
 				options: {
 					sourceMap: true,
@@ -76,12 +78,12 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			dev: {
-				files: [ "photoride.{js,less}" ],
+				files: [ "lib/*.{js,less}" ],
 				tasks: [ 'dev' ],
 				options: { spawn: false }
 			},
 			test: {
-				files: [ "photoride.{js,less}", "test/*.js" ],
+				files: [ "lib/*.{js,less}", "test/*.js" ],
 				tasks: [ 'test' ],
 				options: { spawn: false }
 			}

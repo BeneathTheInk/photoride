@@ -3,14 +3,22 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 		<title>Page Title</title>
 
+		<style type="text/css">
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				font-size: 16px;
+			}
+		</style>
 		<link rel="stylesheet" href="../dist/photoride.dev.css" type="text/css" />
 		<script type="text/javascript" src="../dist/photoride.dev.js"></script>
 	</head>
 	<body>
-		<div data-photoride style="height: 600px">
+		<div data-photoride style="width: 100%; height: 100%;">
 			<img src="img1.jpg" title="Image 1" data-caption="#img1-caption" />
 			<div id="img1-caption">
 				<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor.</p>
@@ -32,8 +40,16 @@
 				<p>Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 			</div>
 
-			<img src="img3.jpg" />
-			<img src="img4.jpg" />
+			<img src="img3.jpg" title="Just a Title" />
+
+			<img src="img4.jpg" data-caption="#img4-caption" />
+			<div id="img4-caption">
+				<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				<p>Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+				<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
+			</div>
+
 			<img src="img5.jpg" />
 		</div>
 	</body>
