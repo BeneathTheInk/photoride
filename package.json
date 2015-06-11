@@ -37,5 +37,14 @@
 	},
 	"scripts": {
 		"prepublish": "grunt"
-	}
+	},
+	"license": "MIT",
+	"keywords": [
+		"photo",
+		"gallery",
+		"viewer",
+		"mobile",
+		"caption",
+		"image"
+	]
 }
