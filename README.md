@@ -66,6 +66,8 @@ __Photoride Options__
 - `showCount` (default: `true`) - Whether or not the photo counter is visible.
 - `resizeEvent` (default: `true`) - By default, an `onresize` event is added to the window to automatically refresh the gallery when the dimensions changes. You can disable the event by setting this to false.
 - `enableTouch` (default: `true`) - By default, the user can scroll between images using their finger on a mobile device. You can disable touch interactions by setting this to false.
+- `enableArrowKeys` (default: `true`) - By default, the user can press the left and right arrow keys to navigate between images. You can disable this feature by setting this to false.
+- `loop` (default: `true`) - Whether or not the next and previous buttons loop around when reaching the end of the photos.
 
 __Individual Image Options__
 
