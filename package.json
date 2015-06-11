@@ -14,7 +14,7 @@
 	"style": "lib/photoride.less",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/beneaththeink/photoride.git"
+		"url": "https://github.com/BeneathTheInk/photoride.git"
 	},
 	"devDependencies": {
 		"grunt": "~0.4.5",
