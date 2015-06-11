@@ -1,51 +1,50 @@
 {
-  "name": "photoride",
-  "version": "0.1.1",
-  "description": "A simple image viewer with support for long captions.",
-  "author": "Beneath the Ink <info@beneaththeink.com>",
-  "contributors": [
-    {
-      "name": "Tyler Johnson",
-      "email": "tyler@beneaththeink.com",
-      "url": "http://github.com/tyler-johnson"
-    }
-  ],
-  "main": "lib/photoride.js",
-  "style": "lib/photoride.less",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BeneathTheInk/photoride.git"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-browserify": "~3.8.0",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-cssmin": "~0.12.3",
-    "grunt-contrib-less": "~1.0.1",
-    "grunt-contrib-uglify": "~0.9.1",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-wrap2000": "~0.1.0",
-    "less-plugin-inline-urls": "~1.1.0",
-    "less-plugin-npm-import": "~2.1.0"
-  },
-  "dependencies": {
-    "domready": "~1.0.8",
-    "iscroll": "^5.1.3",
-    "lesshat": "~3.0.2",
-    "tapjs": "~1.0.6",
-    "underscore": "~1.8.3"
-  },
-  "scripts": {
-    "prepublish": "grunt"
-  },
-  "license": "MIT",
-  "keywords": [
-    "photo",
-    "gallery",
-    "viewer",
-    "mobile",
-    "caption",
-    "image"
-  ]
+	"name": "photoride",
+	"version": "0.1.2",
+	"description": "A simple image viewer with support for long captions.",
+	"author": "Beneath the Ink <info@beneaththeink.com>",
+	"contributors": [
+		{
+			"name": "Tyler Johnson",
+			"email": "tyler@beneaththeink.com",
+			"url": "http://github.com/tyler-johnson"
+		}
+	],
+	"main": "lib/photoride.js",
+	"style": "lib/photoride.less",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BeneathTheInk/photoride.git"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.5",
+		"grunt-browserify": "~3.8.0",
+		"grunt-cli": "~0.1.13",
+		"grunt-contrib-clean": "~0.6.0",
+		"grunt-contrib-cssmin": "~0.12.3",
+		"grunt-contrib-less": "~1.0.1",
+		"grunt-contrib-uglify": "~0.9.1",
+		"grunt-contrib-watch": "~0.6.1",
+		"grunt-wrap2000": "~0.1.0",
+		"less-plugin-inline-urls": "~1.1.0",
+		"less-plugin-npm-import": "~2.1.0"
+	},
+	"dependencies": {
+		"domready": "~1.0.8",
+		"lesshat": "~3.0.2",
+		"tapjs": "~1.0.6",
+		"underscore": "~1.8.3"
+	},
+	"scripts": {
+		"prepublish": "grunt"
+	},
+	"license": "MIT",
+	"keywords": [
+		"photo",
+		"gallery",
+		"viewer",
+		"mobile",
+		"caption",
+		"image"
+	]
 }
