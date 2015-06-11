@@ -1,6 +1,8 @@
 @import "~lesshat/build/lesshat.less";
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic);
 
+@screen-sm: 768px;
+
 .photoride {
 	position: relative;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -18,7 +20,7 @@
 		.box-sizing(border-box);
 	}
 
-	.photoride-btn() {
+	.photoride-btn {
 		display: block;
 		position: absolute;
 		width: 36px;
@@ -26,6 +28,10 @@
 		background-repeat: no-repeat;
 		background-size: 80%;
 		z-index: 10;
+
+		&.photoride-btn-disabled {
+			opacity: 0.3;
+		}
 	}
 
 	.photoride-count {
@@ -56,6 +62,12 @@
 			float: left;
 			top: 0;
 
+			&.photoride-image-loading {
+				.photoride-image-content {
+					opacity: 0;
+				}
+			}
+
 			.photoride-image-content {
 				overflow: scroll;
 			    -webkit-overflow-scrolling: touch;
@@ -63,6 +75,7 @@
 				height: 100%;
 				padding: 50px;
 				z-index: 10;
+				.transition(opacity 150ms);
 			}
 
 			.photoride-image-inner {
@@ -101,25 +114,20 @@
 				}
 			}
 
-			.photoride-image-btn() {
+			.photoride-btn-more {
 				left: 50%;
 				margin-left: -18px;
 				background-color: fade(black, 70%);
-				background-position: 4px 5px;
+				// background-position: 4px 5px;
+				background-position: center;
 				bottom: 9px;
 				.border-radius(18px);
-			}
-
-			.photoride-image-more {
-				.photoride-btn();
-				.photoride-image-btn();
 				background-image: url("./images/angle-up.png");
-			}
+				.transition(transform 150ms);
 
-			.photoride-image-top {
-				.photoride-btn();
-				.photoride-image-btn();
-				background-image: url("./images/angle-down.png");
+				&.photoride-btn-more-flipped {
+					.transform(rotate(180deg));
+				}
 			}
 		}
 	}
@@ -131,19 +139,30 @@
 		.border-radius(18px);
 	}
 
-	.photoride-next-btn {
-		.photoride-btn();
+	.photoride-btn-next {
 		.photoride-nav();
 		right: 7px;
 		background-image: url("./images/angle-right.png");
-		background-position: 5px 5px;
+		// background-position: 5px 5px;
+		background-position: center;
 	}
 
-	.photoride-prev-btn {
-		.photoride-btn();
+	.photoride-btn-previous {
 		.photoride-nav();
 		left: 7px;
 		background-image: url("./images/angle-left.png");
-		background-position: 2px 5px;
+		// background-position: 2px 5px;
+		background-position: center;
+	}
+
+	&.photoride-nav-disabled {
+		.photoride-scroll .photoride-image .photoride-image-content {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.photoride-btn-next, .photoride-btn-previous {
+			display: none;
+		}
 	}
 }
